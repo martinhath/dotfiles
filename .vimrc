@@ -27,3 +27,5 @@ set nu
 let g:solarized_termcolors=256
 
 set rtp+=~/.vim/bundle/powerline/bindings/vim
+
+let mapleader=" "
