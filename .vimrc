@@ -12,20 +12,27 @@ Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'wincent/Command-T.git'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/powerline'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 filetype plugin indent on     " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
+set backspace=indent,eol,start
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set laststatus=2
+
 
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 set nu
 
 let g:solarized_termcolors=256
 
-set rtp+=~/.vim/bundle/powerline/bindings/vim
-
 let mapleader=" "
+
