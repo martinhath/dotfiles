@@ -1,4 +1,3 @@
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/vundle/
@@ -25,14 +24,13 @@ set shiftwidth=4
 set expandtab
 
 set laststatus=2
-
+let g:Powerline_symbols = 'fancy'
 
 syntax enable
 set background=dark
 colorscheme solarized
+set t_Co=256
 set nu
-
-let g:solarized_termcolors=256
 
 let mapleader=" "
 
