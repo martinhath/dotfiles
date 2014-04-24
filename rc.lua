@@ -87,8 +87,8 @@ local layouts = {
 
 -- {{{ Tags
 tags = {
-   names = { "ƀ", "Ƅ", "Ɗ", "ƈ", "ƙ" },
-   layout = { layouts[1], layouts[3], layouts[2], layouts[1], layouts[5] }
+   names = { "Spotify", "Chromium", "Terminal", "α", "β", "γ", "𝛿", "ε", "ζ"},
+   layout = { layouts[1], layouts[1],layouts[1],layouts[1], layouts[3], layouts[2], layouts[1], layouts[5], layouts[1]}
 }
 for s = 1, screen.count() do
    tags[s] = awful.tag(tags.names, s, tags.layout)
@@ -294,11 +294,11 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(first)
-    left_layout:add(mytaglist[s])
+    left_layout:add(mypromptbox[s])
     left_layout:add(arrl_pre)
     left_layout:add(mylayoutbox[s])
     left_layout:add(arrl_post)
-    left_layout:add(mypromptbox[s])
+    left_layout:add(mytaglist[s])
     left_layout:add(first)
 
     -- Widgets that are aligned to the right
@@ -310,7 +310,8 @@ for s = 1, screen.count() do
     right_layout:add(fshome)
     right_layout:add(batwidget)
     right_layout:add(volumewidget)
-    right_layout:add(powerline_widget)
+    --right_layout:add(powerline_widget)
+    right_layout:add(mytextclock)
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()

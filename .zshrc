@@ -81,3 +81,4 @@ zstyle :compinstall filename '/home/martin/.zshrc'
 
 autoload -Uz compinit
 compinit
+
