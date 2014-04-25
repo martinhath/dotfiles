@@ -1,8 +1,9 @@
-set nocompatible
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+" Test
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
@@ -35,3 +36,4 @@ set nu
 
 let mapleader=" "
 
+set list listchars=nbsp:▋
