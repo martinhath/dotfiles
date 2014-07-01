@@ -1,9 +1,8 @@
+set nocompatible
 filetype off                  " required
 
-" Test
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
@@ -13,7 +12,11 @@ Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'wincent/Command-T.git'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Lokaltog/powerline'
+Plugin 'jiangmiao/auto-pairs'
+
+
+call vundle#end()
 
 filetype plugin indent on     " required
 " To ignore plugin indent changes, instead use:
@@ -21,9 +24,11 @@ filetype plugin indent on     " required
 
 set backspace=indent,eol,start
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set autoindent
 set expandtab
+set softtabstop=2
+set shiftwidth=2
 
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
@@ -36,4 +41,7 @@ set nu
 
 let mapleader=" "
 
-set list listchars=nbsp:▋
+set listchars=nbsp:▋
+set nolist
+
+autocmd FileType make setlocal noexpandtab shiftwidth=2 softtabstop=0

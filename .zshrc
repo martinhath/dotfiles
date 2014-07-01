@@ -72,3 +72,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/ma
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+setopt nobanghist
+
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
