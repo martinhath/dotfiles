@@ -14,6 +14,7 @@ Plugin 'wincent/Command-T.git'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/powerline'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/syntastic'
 
 
 call vundle#end()
