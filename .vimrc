@@ -12,7 +12,7 @@ Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'wincent/Command-T.git'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/powerline'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 
@@ -39,6 +39,7 @@ set background=dark
 colorscheme solarized
 set t_Co=256
 set nu
+hi Normal ctermbg=NONE
 
 let mapleader=" "
 
