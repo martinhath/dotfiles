@@ -1,41 +1,30 @@
 [global_config]
-  title_transmit_bg_color = "#2d2d2d"
-  handle_size = 1
-  inactive_color_offset = 0.78
+  handle_size = 2
+  custom_url_handler = chromium
+  title_hide_sizetext = True
+  always_split_with_profile = True
+  focus = system
+  use_custom_url_handler = True
+  title_transmit_bg_color = "#000000"
 [keybindings]
-  switch_to_tab_6 = <Alt>6
-  switch_to_tab_7 = <Alt>7
-  switch_to_tab_4 = <Alt>4
-  switch_to_tab_5 = <Alt>5
-  switch_to_tab_2 = <Alt>2
-  switch_to_tab_3 = <Alt>3
-  switch_to_tab_1 = <Alt>1
-  switch_to_tab_8 = <Alt>8
-  switch_to_tab_9 = <Alt>9
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#002b36:#df514f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     background_image = None
-    background_darkness = 0.84
+    background_darkness = 0.93
     background_type = transparent
     use_system_font = False
     foreground_color = "#839496"
     show_titlebar = False
-    font = Inconsolata-dz for Powerline Medium 10
+    font = Droid Sans Mono for Powerline 12
     background_color = "#002b36"
-  [[monokai]]
-    palette = "#222222:#f92672:#6cc72c:#fe9720:#5f91ef:#9358fe:#36af90:#8c8c8c:#4c4c4c:#ff80f4:#a7e22e:#ffee99:#5fd9ef:#ae82fe:#66efd5:#c7cece"
-    background_image = None
-    foreground_color = "#f0f0f0"
-    show_titlebar = False
-    font = DejaVu Sans Mono 10
-    background_color = "#222222"
 [layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
       parent = window0
+      profile = default
     [[[window0]]]
       type = Window
       parent = ""
