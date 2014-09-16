@@ -5,26 +5,36 @@
   always_split_with_profile = True
   focus = system
   use_custom_url_handler = True
-  title_transmit_bg_color = "#000000"
+  title_transmit_bg_color = "#ac4142"
+  title_inactive_bg_color = "#505050"
 [keybindings]
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    palette = "#151515:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#d0d0d0:#505050:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#f5f5f5"
+    font = DejaVu Sans Mono 12
     background_image = None
-    background_darkness = 0.93
-    background_type = transparent
     use_system_font = False
-    foreground_color = "#839496"
+    cursor_color = "#d0d0d0"
+    foreground_color = "#d0d0d0"
     show_titlebar = False
-    font = Droid Sans Mono for Powerline 12
-    background_color = "#002b36"
+    copy_on_selection = True
+    background_color = "#151515"
+    scrollback_infinite = True
+  [[Base16 Default Dark]]
+    palette = "#151515:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#d0d0d0:#505050:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#f5f5f5"
+    background_image = None
+    cursor_color = "#d0d0d0"
+    foreground_color = "#d0d0d0"
+    show_titlebar = False
+    copy_on_selection = True
+    background_color = "#151515"
 [layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = default
+      profile = Base16 Default Dark
     [[[window0]]]
       type = Window
       parent = ""

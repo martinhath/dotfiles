@@ -79,4 +79,4 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/ma
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=$PATH+":/opt/android-sdk/platform-tools"
+export PATH=$PATH":/opt/android-sdk/platform-tools"
