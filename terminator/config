@@ -12,7 +12,7 @@
   [[default]]
     scrollbar_position = hidden
     palette = "#151515:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#d0d0d0:#505050:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#f5f5f5"
-    font = DejaVu Sans Mono 12
+    font = DejaVu Sans Mono for Powerline 12
     background_image = None
     use_system_font = False
     cursor_color = "#d0d0d0"
@@ -21,6 +21,9 @@
     copy_on_selection = True
     background_color = "#151515"
     scrollback_infinite = True
+  [[hue]]
+    background_image = None
+    background_color = "#2d2d2d"
   [[Base16 Default Dark]]
     palette = "#151515:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#d0d0d0:#505050:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#f5f5f5"
     background_image = None
