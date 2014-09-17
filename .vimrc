@@ -47,13 +47,20 @@ set nu
 
 hi Normal ctermbg=NONE
 
-let mapleader=" "
+let mapleader=","
 
 set listchars=nbsp:▋
 set nolist
 
 autocmd FileType make setlocal noexpandtab shiftwidth=2 softtabstop=0
-noremap <F3> :Autoformat<CR><CR>
 autocmd! BufRead,BufNewFile,BufEnter *.{c,cpp,h,javascript} call CSyntaxAfter()
 
 let g:airline_powerline_fonts = 1
+
+""" NerdTree
+autocmd vimenter * NERDTree
+nmap <C-n> :NERDTreeToggle<CR>
+
+""" Vim Autoformat 
+noremap <F3> :Autoformat<CR><CR>
+
