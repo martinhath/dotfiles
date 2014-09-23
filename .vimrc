@@ -18,16 +18,14 @@ Plugin 'L9'
 Plugin 'sentientmachine/erics_vim_syntax_and_color_highlighting'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic'
-Plugin 'tomasr/molokai'
+Plugin 'haskell.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'wincent/Command-T.git'
 
 call vundle#end()
 
-filetype plugin indent on     " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin indent on
 
 set backspace=indent,eol,start
 
@@ -40,6 +38,8 @@ set shiftwidth=4
 set laststatus=2
 
 let base16colorspace=256 
+set background=dark
+set t_Co=256
 colorscheme base16-default
 
 syntax enable
@@ -58,7 +58,7 @@ autocmd! BufRead,BufNewFile,BufEnter *.{c,cpp,h,javascript} call CSyntaxAfter()
 let g:airline_powerline_fonts = 1
 
 """ NerdTree
-autocmd vimenter * NERDTree
+""" autocmd vimenter * NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 
 """ Vim Autoformat 
