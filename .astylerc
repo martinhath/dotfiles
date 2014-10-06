@@ -1,0 +1,32 @@
+# K&R master race
+--style=kr
+
+# int *a, ikke int* a
+-k3
+
+# Space after 'if', 'for' ...
+-H
+
+## Delete empty lines
+#-xd
+
+## Indent empty ines
+-E
+
+## Remove unnecessary padding around ()
+-U
+
+# Padding around operators
+-p
+
+# Break brackets before closing 'else', ...
+-y
+
+# Remove {} from one liners
+-xj
+
+# Tabs -> spaces
+-c
+
+# Max length = 100
+-xC100 
