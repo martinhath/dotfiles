@@ -7,20 +7,17 @@
 # Space after 'if', 'for' ...
 -H
 
-## Delete empty lines
-#-xd
-
 ## Indent empty ines
 -E
 
-## Remove unnecessary padding around ()
+# Delete empty lines
+-xe
+
+# Remove unnecessary padding around ()
 -U
 
 # Padding around operators
 -p
-
-# Break brackets before closing 'else', ...
--y
 
 # Remove {} from one liners
 -xj
