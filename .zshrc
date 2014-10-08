@@ -64,6 +64,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 # tmux
 alias tmux='tmux -2'
 
+alias clip="xsel -ib"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
