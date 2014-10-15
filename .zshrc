@@ -66,6 +66,8 @@ alias tmux='tmux -2'
 
 alias clip="xsel -ib"
 
+alias matlab="rdesktop -g 1600x900 -d WIN-NTNU-NO -u martinht ts.idi.ntnu.no"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
