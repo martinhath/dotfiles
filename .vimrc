@@ -64,3 +64,6 @@ nmap <C-n> :NERDTreeToggle<CR>
 """ Vim Autoformat 
 noremap <F3> :Autoformat<CR><CR>
 
+""" Vim hacks
+nmap j gj
+nmap k gk
