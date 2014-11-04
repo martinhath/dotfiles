@@ -7,7 +7,6 @@ call vundle#begin()
 """Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'chriskempson/base16-vim'
 Plugin 'comments.vim'
 Plugin 'cSyntaxAfter'
@@ -62,8 +61,8 @@ let g:airline_powerline_fonts = 1
 """ autocmd vimenter * NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 
-""" Vim Autoformat 
-noremap <F3> :Autoformat<CR><CR>
+""" Astyle 
+noremap <F3> :%!astyle<CR>
 
 """ Rainbow
 au BufEnter *.{c,cpp,objc,objcpp} call rainbow#load()
