@@ -22,6 +22,7 @@ Plugin 'haskell.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'wincent/Command-T.git'
+Plugin 'oblitum/rainbow'
 
 call vundle#end()
 
@@ -64,6 +65,11 @@ nmap <C-n> :NERDTreeToggle<CR>
 """ Vim Autoformat 
 noremap <F3> :Autoformat<CR><CR>
 
+""" Rainbow
+au BufEnter *.{c,cpp,objc,objcpp} call rainbow#load()
+let g:rainbow_active = 1
+
 """ Vim hacks
 nmap j gj
 nmap k gk
+
