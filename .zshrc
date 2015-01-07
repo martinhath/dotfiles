@@ -67,6 +67,7 @@ alias tmux='tmux -2'
 alias clip="xsel -ib"
 
 alias matlab="rdesktop -g 1600x900 -d WIN-NTNU-NO -u martinht ts.idi.ntnu.no"
+alias vn="source venv/bin/activate"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

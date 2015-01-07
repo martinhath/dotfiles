@@ -11,7 +11,7 @@
 -E
 
 # Delete empty lines
--xe
+# -xe
 
 # Remove unnecessary padding around ()
 -U
