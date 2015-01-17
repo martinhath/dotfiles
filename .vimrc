@@ -20,6 +20,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'wincent/Command-T.git'
+Plugin 'wting/rust.vim'
 Plugin 'oblitum/rainbow'
 
 call vundle#end()
@@ -71,3 +72,6 @@ let g:rainbow_active = 1
 nmap j gj
 nmap k gk
 
+""" YCM debug
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
