@@ -57,7 +57,7 @@ export PATH=$PATH":/opt/android-sdk/platform-tools"
 export EDITOR=vim
 
 # Base16 Shell
-BASE16_SCHEME="default"
+BASE16_SCHEME="ashes"
 BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
@@ -66,7 +66,6 @@ alias tmux='tmux -2'
 
 alias clip="xsel -ib"
 
-alias matlab="rdesktop -g 1600x900 -d WIN-NTNU-NO -u martinht ts.idi.ntnu.no"
 alias vn="source venv/bin/activate"
 
 # export MANPATH="/usr/local/man:$MANPATH"

@@ -4,7 +4,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-"""Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
@@ -13,7 +12,7 @@ Plugin 'cSyntaxAfter'
 Plugin 'FuzzyFinder'
 Plugin 'gmarik/vundle'
 Plugin 'haskell.vim'
-Plugin 'jiangmiao/auto-pairs'
+"""Plugin 'jiangmiao/auto-pairs'
 Plugin 'L9'
 Plugin 'sentientmachine/erics_vim_syntax_and_color_highlighting'
 Plugin 'scrooloose/nerdtree.git'
@@ -39,8 +38,8 @@ set laststatus=2
 
 let base16colorspace=256 
 set background=dark
-set t_Co=256
-colorscheme base16-default
+"set t_Co=256
+colorscheme base16-chalk
 
 syntax enable
 set nu
@@ -49,7 +48,7 @@ hi Normal ctermbg=NONE
 
 let mapleader=","
 
-set listchars=nbsp:▋
+"""set listchars=nbsp:▋
 set nolist
 
 autocmd FileType make setlocal noexpandtab shiftwidth=2 softtabstop=0
