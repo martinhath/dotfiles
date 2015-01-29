@@ -33,6 +33,7 @@ set autoindent
 set expandtab
 set softtabstop=4
 set shiftwidth=4
+set incsearch
 
 set laststatus=2
 
