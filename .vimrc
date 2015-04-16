@@ -14,7 +14,7 @@ Plugin 'haskell.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'L9'
 Plugin 'martinhath/comments.vim'
-Plugin 'oblitum/rainbow'
+Plugin 'luochen1990/rainbow'
 Plugin 'sentientmachine/erics_vim_syntax_and_color_highlighting'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic'
@@ -49,7 +49,7 @@ hi Normal ctermbg=NONE
 
 let mapleader=","
 
-"""set listchars=nbsp:▋
+set listchars=nbsp:▋
 set nolist
 
 autocmd FileType make setlocal noexpandtab shiftwidth=2 softtabstop=0
@@ -65,7 +65,6 @@ nmap <C-n> :NERDTreeToggle<CR>
 noremap <F3> :%!astyle<CR>
 
 """ Rainbow
-au BufEnter *.{c,cpp,objc,objcpp} call rainbow#load()
 let g:rainbow_active = 1
 
 """ Vim hacks
