@@ -72,3 +72,9 @@ let g:rainbow_active = 1
 nmap j gj
 nmap k gk
 
+"""" Scheme chillern
+nmap æ :w !racket -f - <CR>
+
+""" Syntastic
+let g:syntastic_c_compiler_options = "-Wall -std=c99 -Wextra -wunused-variable"
+let g:syntastic_cpp_compiler_options = "-Wall -std=c++14"
