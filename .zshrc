@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/martin/.gem/ruby/2.1.0/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/martin/.gem/ruby/2.2.0/bin"
 
 export PATH=$PATH":/opt/android-sdk/platform-tools"
 export EDITOR=vim
@@ -67,6 +67,8 @@ alias tmux='tmux -2'
 alias clip="xsel -ib"
 
 alias vn="source venv/bin/activate"
+
+alias asm="clang -S -mllvm --x86-asm-syntax=intel"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
