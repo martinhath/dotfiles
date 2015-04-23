@@ -72,7 +72,7 @@ nmap j gj
 nmap k gk
 
 """" Scheme chillern
-nmap æ :w !racket -f - <CR>
+nmap æ :w !make<CR>
 
 """ Syntastic
 let g:syntastic_c_compiler_options = "-Wall -std=c99 -Wextra -wunused-variable"
