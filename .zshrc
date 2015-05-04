@@ -63,12 +63,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 
 # tmux
 alias tmux='tmux -2'
-
 alias clip="xsel -ib"
-
 alias vn="source venv/bin/activate"
-
 alias asm="clang -S -mllvm --x86-asm-syntax=intel"
+alias gs="gst"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
