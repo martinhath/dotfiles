@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/martin/.gem/ruby/2.2.0/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/martin/.gem/ruby/2.2.0/bin:/home/martin/hath/go/bin"
 
 export PATH=$PATH":/opt/android-sdk/platform-tools"
 export EDITOR=vim
@@ -61,12 +61,12 @@ BASE16_SCHEME="chalk"
 BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
-# tmux
-alias tmux='tmux -2'
-alias clip="xsel -ib"
-alias vn="source venv/bin/activate"
 alias asm="clang -S -mllvm --x86-asm-syntax=intel"
+alias clip="xsel -ib"
+alias irc="mosh irc@irc.mthoresen.com -- tmux attach -t irc"
 alias gs="gst"
+alias tmux='tmux -2'
+alias vn="source venv/bin/activate"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
