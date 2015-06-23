@@ -12,6 +12,7 @@ Plugin 'FuzzyFinder'
 Plugin 'gmarik/vundle'
 Plugin 'haskell.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
 Plugin 'L9'
 Plugin 'martinhath/comments.vim'
 Plugin 'luochen1990/rainbow'
@@ -19,7 +20,6 @@ Plugin 'sentientmachine/erics_vim_syntax_and_color_highlighting'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'wincent/Command-T.git'
 Plugin 'wting/rust.vim'
 
 call vundle#end()
@@ -47,8 +47,6 @@ set nu
 
 hi Normal ctermbg=NONE
 
-let mapleader=","
-
 set listchars=nbsp:▋
 set nolist
 
@@ -56,6 +54,14 @@ autocmd FileType make setlocal noexpandtab shiftwidth=2 softtabstop=0
 autocmd! BufRead,BufNewFile,BufEnter *.{c,cpp,h,javascript} call CSyntaxAfter()
 
 let g:airline_powerline_fonts = 1
+
+""" div. vim stuff
+let mapleader=" "
+nmap <Leader>p "*p"
+:command! Reload :so ~/.vimrc
+
+""" CtrlP
+let g:ctrlp_max_files = 0
 
 """ NerdTree
 """ autocmd vimenter * NERDTree

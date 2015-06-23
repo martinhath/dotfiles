@@ -1,3 +1,9 @@
+### Frequently edited configs
+
+IGNORE_DIRS=venv,.venv,.git,node_modules,bower_components
+
+### 
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -61,12 +67,32 @@ BASE16_SCHEME="chalk"
 BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
+
+
+setxkbmap -option "nbsp:none"
+
 alias asm="clang -S -mllvm --x86-asm-syntax=intel"
 alias clip="xsel -ib"
 alias irc="mosh irc@irc.mthoresen.com -- tmux attach -t irc"
 alias gs="gst"
 alias tmux='tmux -2'
 alias vn="source venv/bin/activate"
+alias reload="source ~/.zshrc"
+alias m=__m
+
+
+
+function __m () {
+    if ! [ -n "${1+x}" ]; then
+        echo 'Usage:'
+        echo -e '\tm <term>'
+        return;
+    fi
+    term=$1;
+    shift;
+    # braces expansion before variable inserting ... 
+    grep "$term:" -Iinr $(echo $(eval echo --exclude-dir={$IGNORE_DIRS})) "$@" *
+}
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
