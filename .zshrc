@@ -72,6 +72,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 # Goodbye, non-blocking space
 setxkbmap -option "nbsp:none"
 
+# C-d doesn't exit terminal
+set -o ignoreeof
+
 alias vim=gvim
 
 # more git aliases
