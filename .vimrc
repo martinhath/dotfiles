@@ -4,19 +4,15 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
 Plugin 'cSyntaxAfter'
-Plugin 'FuzzyFinder'
 Plugin 'gmarik/vundle'
 Plugin 'haskell.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
-Plugin 'L9'
 Plugin 'martinhath/comments.vim'
 Plugin 'luochen1990/rainbow'
-Plugin 'sentientmachine/erics_vim_syntax_and_color_highlighting'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
@@ -63,6 +59,7 @@ set autochdir "cd to file when opening files
 
 """ auto-pairs
 autocmd FileType {lisp} let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '`':'`'}
+let g:AutoPairsShortcutToggle = ''
 
 """ CtrlP
 let g:ctrlp_max_files = 0
@@ -77,17 +74,16 @@ noremap <F3> :%!astyle<CR>
 """ Rainbow
 let g:rainbow_active = 1
 let g:rainbow_conf = {
-            \ 'guifgs': ['coral1', 'goldenrod1', 'olivedrab3',
-            \ 'paleturquoise3', 'dodgerblue1', 'bisque1', 'tomato',
-            \ 'orchid1']
+            \ 'guifgs': ['gray40', 'gray60', 'gray80', 'rosybrown', 'steelblue1',
+            \            'olivedrab3', 'paleturquoise3', 'bisque1',
+            \            'tomato', 'goldenrod1', 'orchid1']
             \}
-
 
 """ Vim hacks
 nmap j gj
 nmap k gk
 
-"""" Scheme chillern
+"""" Make chillern
 nmap æ :w !make<CR>
 
 """ Syntastic
@@ -102,4 +98,6 @@ if has('gui_running')
     :set guioptions-=e  "default tab looks
     :set guifont=monospace\ 11 "normal size font
     colorscheme base16-tomorrow
+else
+    colorscheme base16-default
 endif
