@@ -1,6 +1,6 @@
 ### Frequently edited configs
 
-IGNORE_DIRS=venv,.venv,.git,node_modules,bower_components
+IGNORE_DIRS=venv,.venv,.git,node_modules,bower_components,.tox,site-packages
 
 ### 
 
@@ -57,7 +57,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/martin/.gem/ruby/2.2.0/bin:/home/martin/hath/go/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl\
+:/home/martin/.gem/ruby/2.2.0/bin:/home/martin/hath/go/bin"
 
 export PATH=$PATH":/opt/android-sdk/platform-tools"
 export EDITOR=vim
@@ -68,20 +69,27 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 
-
+# Goodbye, non-blocking space
 setxkbmap -option "nbsp:none"
+
+alias vim=gvim
+
+# more git aliases
+alias gs="gst"
+alias gd="git diff --color=auto"
+alias gds="git diff --color=auto --staged"
 
 alias asm="clang -S -mllvm --x86-asm-syntax=intel"
 alias clip="xsel -ib"
 alias irc="mosh irc@irc.mthoresen.com -- tmux attach -t irc"
-alias gs="gst"
 alias tmux='tmux -2'
 alias vn="source venv/bin/activate"
 alias reload="source ~/.zshrc"
+
+bindkey -s "\es" "^asudo ^e"
+
+# not really sure if i need an alias, instead of just calling the function 'm'
 alias m=__m
-
-
-
 function __m () {
     if ! [ -n "${1+x}" ]; then
         echo 'Usage:'

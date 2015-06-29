@@ -37,7 +37,7 @@ set incsearch
 
 set laststatus=2
 
-let base16colorspace=256 
+let base16colorspace=256
 set background=dark
 set t_Co=256
 colorscheme base16-chalk
@@ -57,17 +57,18 @@ let g:airline_powerline_fonts = 1
 
 """ div. vim stuff
 let mapleader=" "
-nmap <Leader>p "*p"
-:command! Reload :so ~/.vimrc
+nmap <Leader>p "*p
+:command! Reload :so ~/.vimrc "chill
+set autochdir "cd to file when opening files
 
 """ CtrlP
 let g:ctrlp_max_files = 0
+noremap <M-p> :CtrlPBuffer<CR>
 
 """ NerdTree
-""" autocmd vimenter * NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 
-""" Astyle 
+""" Astyle
 noremap <F3> :%!astyle<CR>
 
 """ Rainbow
@@ -83,3 +84,12 @@ nmap æ :w !make<CR>
 """ Syntastic
 let g:syntastic_c_compiler_options = "-Wall -std=c99 -Wextra -wunused-variable"
 let g:syntastic_cpp_compiler_options = "-Wall -std=c++14"
+
+if has('gui_running')
+    :set guioptions-=m  "remove menu bar
+    :set guioptions-=T  "remove toolbar
+    :set guioptions-=r  "remove right-hand scroll bar
+    :set guioptions-=L  "remove left-hand scroll bar
+    :set guioptions-=e  "default tab looks
+    :set guifont=monospace\ 11 "normal size font
+endif
