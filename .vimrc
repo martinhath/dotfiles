@@ -61,6 +61,9 @@ nmap <Leader>p "*p
 :command! Reload :so ~/.vimrc "chill
 set autochdir "cd to file when opening files
 
+""" auto-pairs
+autocmd FileType {lisp} let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '`':'`'}
+
 """ CtrlP
 let g:ctrlp_max_files = 0
 noremap <M-p> :CtrlPBuffer<CR>
@@ -73,6 +76,12 @@ noremap <F3> :%!astyle<CR>
 
 """ Rainbow
 let g:rainbow_active = 1
+let g:rainbow_conf = {
+            \ 'guifgs': ['coral1', 'goldenrod1', 'olivedrab3',
+            \ 'paleturquoise3', 'dodgerblue1', 'bisque1', 'tomato',
+            \ 'orchid1']
+            \}
+
 
 """ Vim hacks
 nmap j gj
@@ -92,4 +101,5 @@ if has('gui_running')
     :set guioptions-=L  "remove left-hand scroll bar
     :set guioptions-=e  "default tab looks
     :set guifont=monospace\ 11 "normal size font
+    colorscheme base16-tomorrow
 endif
