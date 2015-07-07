@@ -103,3 +103,6 @@ if has('gui_running')
 else
     colorscheme base16-default
 endif
+
+"hack, in order to show colors correctly ..
+autocmd VimEnter * RainbowLoad
