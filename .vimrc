@@ -54,16 +54,17 @@ let g:airline_powerline_fonts = 1
 """ div. vim stuff
 let mapleader=" "
 nmap <Leader>p "*p
+nmap <M-8> :set hlsearch!<CR>
 :command! Reload :so ~/.vimrc "chill
-set autochdir "cd to file when opening files
 
 """ auto-pairs
-autocmd FileType {lisp} let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '`':'`'}
+autocmd FileType {lisp,rust} let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '`':'`'}
 let g:AutoPairsShortcutToggle = ''
 
 """ CtrlP
 let g:ctrlp_max_files = 0
 noremap <M-p> :CtrlPBuffer<CR>
+set wildignore+=*/venv/*,*/target/*
 
 """ NerdTree
 nmap <C-n> :NERDTreeToggle<CR>
@@ -84,7 +85,7 @@ nmap j gj
 nmap k gk
 
 """" Make chillern
-nmap æ :w !make<CR>
+nmap <Leader>m :w !make<CR>
 
 """ Syntastic
 let g:syntastic_c_compiler_options = "-Wall -std=c99 -Wextra -wunused-variable"
@@ -98,6 +99,7 @@ if has('gui_running')
     :set guioptions-=e  "default tab looks
     :set guifont=monospace\ 11 "normal size font
     colorscheme base16-tomorrow
+    set lines=70 columns=180
 else
     colorscheme base16-default
 endif
