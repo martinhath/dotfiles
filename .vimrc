@@ -54,6 +54,7 @@ let g:airline_powerline_fonts = 1
 """ div. vim stuff
 let mapleader=" "
 nmap <Leader>p "*p
+nmap <Leader>$ mm:%s/\s\+$//g<CR>'m
 nmap <M-8> :set hlsearch!<CR>
 :command! Reload :so ~/.vimrc "chill
 
@@ -105,4 +106,5 @@ else
 endif
 
 "hack, in order to show colors correctly ..
-autocmd VimEnter * RainbowLoad
+autocmd VimEnter * RainbowToggle
+

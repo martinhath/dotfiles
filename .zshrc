@@ -72,9 +72,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 # Goodbye, non-blocking space
 setxkbmap -option "nbsp:none"
 
-# C-d doesn't exit terminal
-set -o ignoreeof
-
 alias vim=gvim
 
 # more git aliases
@@ -88,6 +85,8 @@ alias irc="mosh irc@irc.mthoresen.com -- tmux attach -t irc"
 alias tmux='tmux -2'
 alias vn="source venv/bin/activate"
 alias reload="source ~/.zshrc"
+
+alias xbox="sudo xboxdrv --detach-kernel-driver"
 
 bindkey -s "\es" "^asudo ^e"
 
