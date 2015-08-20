@@ -1,7 +1,12 @@
-### Frequently edited configs
+export ZSH=/home/martin/.oh-my-zsh
+ZSH_THEME="avit"
+plugins=(git)
 
-IGNORE_DIRS=venv,.venv,.git,node_modules,bower_components,.tox,site-packages
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
+source $ZSH/oh-my-zsh.sh
+
+IGNORE_DIRS=venv,.venv,.git,node_modules,bower_components,.tox,site-
 DISABLE_AUTO_TITLE="true"
 
 export EDITOR=emacs
