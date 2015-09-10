@@ -1,0 +1,27 @@
+Config {
+       font	   = "xft:Inconsolata:size=9"
+     , bgColor	   = "#222"
+     , fgColor     = "#777"
+     , position    = Top
+     , border      = BottomB
+     , borderColor = "#333"
+     , sepChar     = "%"
+     , alignSep    = "}{"
+     , commands = [ Run Swap [] 10
+                  , Run Battery [ "--template", "Batt: <acstatus>"
+                                , "--"
+                                  , "-o", "<left>% (<timeleft>)"
+                                ] 50
+                  , Run Memory  [ "--template", "Mem: <usedratio>%"
+                                ] 10
+                  , Run Kbd []
+                  , Run DynNetwork [ "--template", "Net: <rx>kB/s <tx>kB/s"
+                                   ] 10
+                  , Run MultiCpu [ "--template", "CPU: <total0>% <total1>% <total2>% <total3>%"
+                                 ] 10
+                  , Run StdinReader
+                  ]
+     , template = "%StdinReader% | Keyboard: %kbd%\
+                 \} %date% {\
+                 \%multicpu% | %memory% | %swap% | %dynnetwork% | %battery% "
+}

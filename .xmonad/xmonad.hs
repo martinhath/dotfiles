@@ -1,0 +1,70 @@
+import System.IO(hPutStrLn)
+import XMonad
+import XMonad.Actions.CycleWS
+import XMonad.Actions.WorkspaceNames
+import XMonad.Config.Desktop
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.SetWMName
+import XMonad.Layout.Gaps
+import XMonad.Layout.Spacing
+import XMonad.Layout.ThreeColumns
+import XMonad.Layout.ToggleLayouts
+import XMonad.Prompt
+import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.WorkspaceCompare
+import qualified Data.Map as M
+import qualified XMonad.StackSet as W
+
+baseConfig = desktopConfig
+
+gapWidth = 20
+
+focusFollowsMouse' :: Bool
+focusFollowsMouse' = False
+
+
+layout = toggleLayouts Full splitLayout ||| tileLayout
+
+tiling = smartSpacing 10 . gaps gps
+         where gps = [(U, gapWidth), (D, gapWidth), (L, gapWidth), (R, gapWidth)]
+
+defLayout t = tiling $ t nmaster delta ratio
+             where nmaster = 1
+                   ratio   = 1/2
+                   delta   = 3/100
+
+tileLayout = defLayout Tall
+splitLayout = defLayout ThreeColMid
+
+modKey = mod4Mask
+
+myKeys (XConfig {modMask = modm}) = M.fromList $
+                                    [((modm, xK_Right), moveTo Next (WSIs notSP))
+                                    ,((modm, xK_Left), moveTo Prev (WSIs notSP))
+                                    ,((modm .|. shiftMask, xK_r), renameWorkspace defaultXPConfig)
+                                    ,((modm .|. controlMask, xK_space), sendMessage ToggleLayout)
+                                    ]
+  where notSP = (return $ ("SP" /=) . W.tag) :: X (WindowSpace -> Bool)
+
+
+xmobarPP' out = xmobarPP { ppOutput  = hPutStrLn out}
+
+myLogHook out = workspaceNamesPP (xmobarPP' out) >>= dynamicLogWithPP
+
+myConfig out = defaultConfig
+    { terminal    = "urxvt"
+    , startupHook = setWMName "LG3D"
+    , modMask     = modKey
+    , keys        = \c -> myKeys c `M.union` keys defaultConfig c
+    , borderWidth = 4
+    , layoutHook  = layout
+    , logHook      = myLogHook out
+    , normalBorderColor = "#1D1F21"
+    , focusedBorderColor = "#CC6666"
+    , focusFollowsMouse = focusFollowsMouse'
+    }
+
+main = do
+  xmproc <- spawnPipe "xmobar"
+  xmonad =<< xmobar (myConfig xmproc)
