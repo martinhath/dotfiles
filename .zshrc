@@ -1,8 +1,8 @@
 export ZSH=/home/martin/.oh-my-zsh
 ZSH_THEME="wezm"
-plugins=(git)
+plugins=(git z)
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl":/home/martin/mozart/bin:/home/martin/mozart/platform/linux-i486
 
 source $ZSH/oh-my-zsh.sh
 
@@ -18,7 +18,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 
 
 # Goodbye, non-blocking space
-setxkbmap -option "nbsp:none"
+# setxkbmap -option "nbsp:none"
 
 # more git aliases
 alias gs="gst"
@@ -33,6 +33,8 @@ alias vn="source venv/bin/activate"
 alias reload="source ~/.zshrc"
 
 alias xbox="sudo xboxdrv --detach-kernel-driver"
+
+alias net="sudo systemctl restart netctl-auto@wlp1s0.service"
 
 bindkey -s "\es" "^asudo ^e"
 

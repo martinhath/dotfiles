@@ -54,3 +54,4 @@
 
 (load-theme 'base16-tomorrow-dark t)
 
+(set-face-attribute 'default (selected-frame) :height 100)
