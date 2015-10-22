@@ -32,6 +32,9 @@ alias tmux='tmux -2'
 alias vn="source venv/bin/activate"
 alias reload="source ~/.zshrc"
 
+# sbcl stuff
+function sbcll_() {sbcl.compile $@ && sbcl.run $(echo $@ | sed "s/\.lisp/\.fasl/g")}
+
 alias xbox="sudo xboxdrv --detach-kernel-driver"
 
 alias net="sudo systemctl restart netctl-auto@wlp1s0.service"

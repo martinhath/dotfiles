@@ -1,0 +1,6 @@
+set default-bg "#ffffff"
+
+set inputbar-bg ff00ff
+
+map n navigate next
+map p navigate previous
