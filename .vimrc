@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
 Plugin 'cSyntaxAfter'
+Plugin 'derekwyatt/vim-scala'
 Plugin 'gmarik/vundle'
 Plugin 'haskell.vim'
 Plugin 'jiangmiao/auto-pairs'
@@ -36,7 +37,7 @@ set laststatus=2
 let base16colorspace=256
 set background=dark
 set t_Co=256
-colorscheme base16-chalk
+colorscheme base16-tomorrow
 
 syntax enable
 set nu
@@ -102,7 +103,7 @@ if has('gui_running')
     colorscheme base16-tomorrow
     set lines=70 columns=180
 else
-    colorscheme base16-default
+    colorscheme torte
 endif
 
 "hack, in order to show colors correctly ..
