@@ -2,23 +2,30 @@ export ZSH=/home/martin/.oh-my-zsh
 ZSH_THEME="wezm"
 plugins=(git z)
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl":/home/martin/mozart/bin:/home/martin/mozart/platform/linux-i486
+export GOPATH=$HOME/go/
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl":/home/martin/.cargo/bin:$GOPATH/bin
+export RUST_SRC_PATH='/home/martin/src/rust/src'
+export CARGO_HOME='/home/martin/.cargo'
 
 source $ZSH/oh-my-zsh.sh
 
 IGNORE_DIRS=venv,.venv,.git,node_modules,bower_components,.tox,site-
 DISABLE_AUTO_TITLE="true"
 
-export EDITOR=emacs
+export EDITOR=gvim
 
 # Base16 Shell
-BASE16_SCHEME="chalk"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+BASE16_SCHEME="solarized"
+BASE16_LIGHT="light"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.$BASE16_LIGHT.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 
 # Goodbye, non-blocking space
 # setxkbmap -option "nbsp:none"
+
+# Colors
+alias pacman="pacman --color=auto"
 
 # more git aliases
 alias gs="gst"
@@ -31,6 +38,9 @@ alias irc="mosh irc@irc.mthoresen.com -- tmux attach -t irc"
 alias tmux='tmux -2'
 alias vn="source venv/bin/activate"
 alias reload="source ~/.zshrc"
+
+# Android pathing for react native
+export ANDROID_HOME="$(pwd)/Android/Sdk"
 
 # sbcl stuff
 function sbcll_() {sbcl.compile $@ && sbcl.run $(echo $@ | sed "s/\.lisp/\.fasl/g")}
