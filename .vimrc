@@ -1,131 +1,75 @@
-set nocompatible
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
+  " Base 16 color scheme
+  Plug 'chriskempson/base16-vim'
+  " File browser
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  " Async lint engine
+  Plug 'w0rp/ale'
+  " Airline
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  " CtrlP
+  Plug 'ctrlpvim/ctrlp.vim'
+  " git diff signals in sidebar
+  Plug 'airblade/vim-gitgutter'
+  " Rust
+  Plug 'rust-lang/rust.vim'
+  " Auto pairs
+  Plug 'jiangmiao/auto-pairs'
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+  " JS + JSX
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
+call plug#end()
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'chriskempson/base16-vim'
-Plugin 'cSyntaxAfter'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'fsharp/vim-fsharp'
-Plugin 'gmarik/vundle'
-Plugin 'haskell.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'martinhath/comments.vim'
-Plugin 'luochen1990/rainbow'
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/echodoc.vim'
-Plugin 'tpope/vim-fugitive'
-"""Plugin 'valloric/YouCompleteMe'
+" Whitespace
+set nowrap                        " don't wrap lines
+set tabstop=2                     " a tab is two spaces
+set shiftwidth=2                  " an autoindent (with <<) is two spaces
+set expandtab                     " use spaces, not tabs
 
-call vundle#end()
+set number
+set ruler                         " Show the cursor position all the time
+set colorcolumn=100               " Show vertical bar at column 80
+set cursorline                    " Show current cursor line
 
-filetype plugin indent on
+" Searching
+set ignorecase                    " searches are case insensitive...
+set smartcase                     " ... unless they contain at least one capital letter
 
-set backspace=indent,eol,start
-
-set tabstop=2
-set autoindent
-set expandtab
-set softtabstop=2
-set shiftwidth=2
-set incsearch
-
-set laststatus=2
-
-let base16colorspace=256
-set background=light
-set t_Co=256
-colorscheme base16-solarized
-
-syntax enable
-set nu
-
-hi Normal ctermbg=NONE
-""" Ban non blocking whitespace
-set listchars=nbsp:▋
-set nolist
-
-""" Makefiles must use tabs
-autocmd FileType make setlocal noexpandtab shiftwidth=2 softtabstop=0
-
-""" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
-
-""" div. vim stuff
+" enter -> no hlsearch
+:nnoremap <CR> :nohlsearch<cr>
+" leader is space
 let mapleader=" "
-""" paste from clipboards
-nmap <Leader>p "*p
-nmap <Leader>P "+p
-nmap <Leader>y "*y
-nmap <Leader>Y "+y
-""" remove trailing spaces, without moving cursor from line
-nmap <Leader>$ mm:%s/\s\+$//g<CR>'m
-""" case insensitive search
-nmap <Leader>/ /\c
-nmap <M-8> :set hlsearch!<CR>
-:command! Reload :so ~/.vimrc "chill
+" remove trailing space
+map <Leader>$ :%s/\s\+$//g<CR>
 
-""" auto-pairs
-autocmd FileType {lisp,rust} let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', '`':'`'}
+" Toggle relative numbers
+nnoremap <M-n> :let &rnu=!&rnu<CR>
+
+set termguicolors
+colorscheme base16-tomorrow-night
+let g:airline_theme="base16_tomorrow"
+
+" AutoPairs
 let g:AutoPairsShortcutToggle = ''
 
-""" CtrlP
+" CTRLP don't look through certain folders
 let g:ctrlp_max_files = 0
 noremap <M-p> :CtrlPBuffer<CR>
 set wildignore+=*/venv/*,*/target/*,*/node_modules/*,*/*.class,*/*.pyc,*/*.o
 
-""" NerdTree
-nmap <C-n> :NERDTreeToggle<CR>
+" NERD tree
+map <C-n> :NERDTreeToggle<CR>
 
-""" Rainbow
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-            \ 'guifgs': ['gray40', 'gray60', 'gray80', 'rosybrown', 'steelblue1',
-            \            'olivedrab3', 'paleturquoise3', 'bisque1',
-            \            'tomato', 'goldenrod1', 'orchid1']
-            \}
+" Ale
+let g:ale_fix_on_save = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-""" Rust-vim
-let g:rustfmt_autosave = 1
-
-""" Racer
-set hidden
-let g:racer_cmd = '/home/martin/.cargo/bin/racer'
-let g:racer_experimental_completer = 1
-let $RUST_SRC_PATH = '/home/martin/src/rust/src/'
-
-""" Vim hacks
-nmap j gj
-nmap k gk
-
-"""" Make chillern
-nmap <Leader>m :w !make<CR>
-
-""" """ Syntastic
-""" let g:syntastic_c_compiler_options = "-Wall -std=c99 -Wextra -wunused-variable"
-""" let g:syntastic_cpp_compiler_options = "-Wall -std=c++14"
-
-""" YouCompleteMe
-let g:ycm_rust_src_path = '/usr/local/src/rustc-1.7.0/src'
-
-if has('gui_running')
-    :set guioptions-=m  "remove menu bar
-    :set guioptions-=T  "remove toolbar
-    :set guioptions-=r  "remove right-hand scroll bar
-    :set guioptions-=L  "remove left-hand scroll bar
-    :set guioptions-=e  "default tab looks
-    :set guifont=Liberation\ Mono\ 11 "normal size font
-    set background=light
-    set lines=70 columns=180
-endif
-
-"hack, in order to show colors correctly ..
-autocmd VimEnter * RainbowToggle
+" JS stuff
+let g:jsx_ext_required = 0
+let g:ale_javascript_prettier_options = '--single-quote'
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\}
